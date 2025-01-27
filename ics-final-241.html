@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <link rel="stylesheet" href="Assets/CSS/scroll-top-bottom.css">
+</head>
+
+<body>
+    <script type=module src="Assets/Scripts/header.js"></script>
+    <my-header></my-header>
+    <script src="Assets/Scripts/search-header.js"></script>
+    <nav class="breadcrumb"><a href="index.html">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script><lord-icon
+                src="https://cdn.lordicon.com/laqlvddb.json" trigger="loop" colors="primary:#ffffff,secondary:#ff0040"
+                style="width:20px;height:15px;margin-left:-12px;font-weight:700"></lord-icon>
+        </a><span>&gt;</span><a href="index.html">ICS</a><span>/</span><a
+            href="index.html">Final</a><span>/</span><span class="bc-current-page">Batch - 241</span>
+    </nav>
+    <div class="scroll-buttons-container" id="scrollButtons">
+        <button id="scrollUp" title="Go to Top"><i class="fa-solid fa-arrow-up"></i></button>
+        <button id="scrollDown" title="Go to Bottom"><i class="fa-solid fa-arrow-down"></i></button>
+    </div>
+    <div class="container">
+        <!-- ----------------SET 1----------------- -->
+        <h2>Final Exam Question - 241 (Set - 1)</h2>
+        <!-- Question 1 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 1: Speed of Light Calculation</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a C program that will take 2 floats (Energy and mass) as input and print the Speed of Light as
+                    output to 3 decimal places. Einstein’s equation for the theory of relativity is as follows:
+                    <br><br>
+                    E = mc<sup>2</sup>, where E = energy, m = mass, c = Speed of light.
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>134.5 150.2</td>
+                            <td>0.946</td>
+                        </tr>
+                        <tr>
+                            <td>84.9 12.6</td>
+                            <td>2.596</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    float E, m, c;
+
+    scanf("%f %f", &E, &m);
+
+    c = sqrt(E / m);
+
+    printf("%.3f\n", c);
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code1')"></i>
+                        <pre><code id="code1" class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    float E, m, c;
+
+    scanf("%f %f", &E, &m);
+
+    c = sqrt(E / m);
+
+    printf("%.3f\n", c);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="energyInput" placeholder="Enter energy (E)" step="any">
+                    <input type="number" id="massInput" placeholder="Enter mass (m)" step="any">
+                    <button class="run-btn" onclick="runSpeedOfLightProgram()">Run <i
+                            class="fa-solid fa-play"></i></button>
+                    <div id="outputSpeedOfLightProgram"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runSpeedOfLightProgram() {
+                const energy = parseFloat(document.getElementById("energyInput").value);
+                const mass = parseFloat(document.getElementById("massInput").value);
+
+                if (isNaN(energy) || isNaN(mass) || energy <= 0 || mass <= 0) {
+                    alert("Please enter valid energy and mass values.");
+                    return;
+                }
+
+                const speedOfLight = Math.sqrt(energy / mass);
+
+                const output = `Speed of Light (c): ${speedOfLight.toFixed(3)}`;
+                const outputDiv = document.getElementById("outputSpeedOfLightProgram");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 2 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 2: Rectangle Area and Perimeter Calculation</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a C program that can calculate the area and perimeter of a rectangle. The system first takes
+                    input of a character that can be ‘A’ or ‘P’. If A is entered, the program will compute the area, and
+                    if P is entered, the program will compute the perimeter.
+                    <br><br>
+                    Formulas:
+                    <ul>
+                        <li>Area of a rectangle: \( \text{length} \times \text{width} \)</li>
+                        <li>Perimeter of a rectangle: \( 2 \times (\text{length} + \text{width}) \)</li>
+                    </ul>
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>A 5.0 4.0</td>
+                            <td>The area of a rectangle is: 20.000000</td>
+                        </tr>
+                        <tr>
+                            <td>P 3.0 2.0</td>
+                            <td>The perimeter of a rectangle is: 10.000000</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    char choice;
+    float length, width;
+
+    scanf("%c %f %f", &choice, &length, &width);
+
+    if (choice == 'A') {
+        printf("The area of a rectangle is: %.6f\n", length * width);
+    } else if (choice == 'P') {
+        printf("The perimeter of a rectangle is: %.6f\n", 2 * (length + width));
+    }
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code2')"></i>
+                        <pre><code id="code2" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    char choice;
+    float length, width;
+
+    scanf("%c %f %f", &choice, &length, &width);
+
+    if (choice == 'A') {
+        printf("The area of a rectangle is: %.6f\n", length * width);
+    } else if (choice == 'P') {
+        printf("The perimeter of a rectangle is: %.6f\n", 2 * (length + width));
+    }
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="choiceInput" placeholder="Enter A for area or P for perimeter">
+                    <input type="number" id="lengthInput" placeholder="Enter length" step="any">
+                    <input type="number" id="widthInput" placeholder="Enter width" step="any">
+                    <button class="run-btn" onclick="runRectangleProgram()">Run <i
+                            class="fa-solid fa-play"></i></button>
+                    <div id="outputRectangleProgram"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runRectangleProgram() {
+                const choice = document.getElementById("choiceInput").value.toUpperCase();
+                const length = parseFloat(document.getElementById("lengthInput").value);
+                const width = parseFloat(document.getElementById("widthInput").value);
+
+                if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0 || (choice !== "A" && choice !== "P")) {
+                    alert("Please enter valid inputs.");
+                    return;
+                }
+
+                let output = '';
+
+                if (choice === "A") {
+                    output = `The area of a rectangle is: ${(length * width).toFixed(6)}`;
+                } else if (choice === "P") {
+                    output = `The perimeter of a rectangle is: ${(2 * (length + width)).toFixed(6)}`;
+                }
+
+                const outputDiv = document.getElementById("outputRectangleProgram");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 3 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 3: Maximum Value Divisibility Check</th>
+            </tr>
+            <tr>
+                <td>
+                    Take three integers as input and find the maximum value. If the maximum number is divisible by 2,
+                    print “Red Number”, or if it is divisible by 3, print “Blue Number”, or if divisible by both 2 and
+                    3, print “Purple Number”, or if it is divisible by neither, print “White Number”.
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>34 45 40</td>
+                            <td>Blue Number</td>
+                        </tr>
+                        <tr>
+                            <td>10 9 7</td>
+                            <td>Red Number</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    int maxVal = a;
+    if (b > maxVal) maxVal = b;
+    if (c > maxVal) maxVal = c;
+
+    if (maxVal % 2 == 0 && maxVal % 3 == 0) {
+        printf("Purple Number\n");
+    } else if (maxVal % 2 == 0) {
+        printf("Red Number\n");
+    } else if (maxVal % 3 == 0) {
+        printf("Blue Number\n");
+    } else {
+        printf("White Number\n");
+    }
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code3')"></i>
+                        <pre><code id="code3" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    int maxVal = a;
+    if (b > maxVal) maxVal = b;
+    if (c > maxVal) maxVal = c;
+
+    if (maxVal % 2 == 0 && maxVal % 3 == 0) {
+        printf("Purple Number\n");
+    } else if (maxVal % 2 == 0) {
+        printf("Red Number\n");
+    } else if (maxVal % 3 == 0) {
+        printf("Blue Number\n");
+    } else {
+        printf("White Number\n");
+    }
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="num1" placeholder="Enter first number">
+                    <input type="number" id="num2" placeholder="Enter second number">
+                    <input type="number" id="num3" placeholder="Enter third number">
+                    <button class="run-btn" onclick="runMaxValueCheck()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputMaxValueCheck"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runMaxValueCheck() {
+                const num1 = parseInt(document.getElementById("num1").value);
+                const num2 = parseInt(document.getElementById("num2").value);
+                const num3 = parseInt(document.getElementById("num3").value);
+
+                if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                    alert("Please enter valid numbers.");
+                    return;
+                }
+
+                let maxVal = Math.max(num1, num2, num3);
+                let result = '';
+
+                if (maxVal % 2 === 0 && maxVal % 3 === 0) {
+                    result = "Purple Number";
+                } else if (maxVal % 2 === 0) {
+                    result = "Red Number";
+                } else if (maxVal % 3 === 0) {
+                    result = "Blue Number";
+                } else {
+                    result = "White Number";
+                }
+
+                const outputDiv = document.getElementById("outputMaxValueCheck");
+                outputDiv.innerText = result;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 4 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 4: Maximum Value with Addition and Multiplication</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a C program that will take three integer numbers as input, and calculate the maximum value
+                    after using exactly one addition and exactly one multiplication operation among those numbers.
+                    <br><b>Hints:</b> Compute values for all three possible combinations \(a + b \times c\), \(b + a
+                    \times c\), and \(c + a \times b\) and find the maximum value.
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>1 4 7</td>
+                            <td>Maximum value: 29</td>
+                        </tr>
+                        <tr>
+                            <td>-5 0 3</td>
+                            <td>Maximum value: 3</td>
+                        </tr>
+                        <tr>
+                            <td>-3 -2 -9</td>
+                            <td>Maximum value: 25</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    int val1 = a + b * c;
+    int val2 = b + a * c;
+    int val3 = c + a * b;
+
+    int maxVal = val1;
+    if (val2 > maxVal) maxVal = val2;
+    if (val3 > maxVal) maxVal = val3;
+
+    printf("Maximum value: %d\n", maxVal);
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code4')"></i>
+                        <pre><code id="code4" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    int val1 = a + b * c;
+    int val2 = b + a * c;
+    int val3 = c + a * b;
+
+    int maxVal = val1;
+    if (val2 > maxVal) maxVal = val2;
+    if (val3 > maxVal) maxVal = val3;
+
+    printf("Maximum value: %d\n", maxVal);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="num1" placeholder="Enter first number">
+                    <input type="number" id="num2" placeholder="Enter second number">
+                    <input type="number" id="num3" placeholder="Enter third number">
+                    <button class="run-btn" onclick="runMaxValueCalculation()">Run <i
+                            class="fa-solid fa-play"></i></button>
+                    <div id="outputMaxValueCalculation"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runMaxValueCalculation() {
+                const num1 = parseInt(document.getElementById("num1").value);
+                const num2 = parseInt(document.getElementById("num2").value);
+                const num3 = parseInt(document.getElementById("num3").value);
+
+                if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                    alert("Please enter valid numbers.");
+                    return;
+                }
+
+                const val1 = num1 + num2 * num3;
+                const val2 = num2 + num1 * num3;
+                const val3 = num3 + num1 * num2;
+
+                const maxVal = Math.max(val1, val2, val3);
+
+                const outputDiv = document.getElementById("outputMaxValueCalculation");
+                outputDiv.innerText = `Maximum value: ${maxVal}`;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+        <!-- Question 5 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 5: Print Digits from Last Digit to 9</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a program that will take a positive integer as input, find the last digit, and print all the
+                    digits from the last digit to digit 9. You must use switch-case statements and the last digit as its
+                    input.
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>54</td>
+                            <td>456789</td>
+                        </tr>
+                        <tr>
+                            <td>90</td>
+                            <td>0123456789</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>6789</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    scanf("%d", &num);
+    
+    int lastDigit = num % 10;
+
+    switch (lastDigit) {
+        case 0: printf("0123456789\n"); break;
+        case 1: printf("123456789\n"); break;
+        case 2: printf("23456789\n"); break;
+        case 3: printf("3456789\n"); break;
+        case 4: printf("456789\n"); break;
+        case 5: printf("56789\n"); break;
+        case 6: printf("6789\n"); break;
+        case 7: printf("789\n"); break;
+        case 8: printf("89\n"); break;
+        case 9: printf("9\n"); break;
+        default: printf("Invalid input\n"); break;
+    }
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code5')"></i>
+                        <pre><code id="code5" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    scanf("%d", &num);
+    
+    int lastDigit = num % 10;
+
+    switch (lastDigit) {
+        case 0: printf("0123456789\n"); break;
+        case 1: printf("123456789\n"); break;
+        case 2: printf("23456789\n"); break;
+        case 3: printf("3456789\n"); break;
+        case 4: printf("456789\n"); break;
+        case 5: printf("56789\n"); break;
+        case 6: printf("6789\n"); break;
+        case 7: printf("789\n"); break;
+        case 8: printf("89\n"); break;
+        case 9: printf("9\n"); break;
+        default: printf("Invalid input\n"); break;
+    }
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="numInput" placeholder="Enter a positive integer" min="0">
+                    <button class="run-btn" onclick="runPrintDigits()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputPrintDigits"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runPrintDigits() {
+                const num = parseInt(document.getElementById("numInput").value);
+
+                if (isNaN(num) || num < 0) {
+                    alert("Please enter a valid positive integer.");
+                    return;
+                }
+
+                const lastDigit = num % 10;
+                let result = '';
+
+                switch (lastDigit) {
+                    case 0: result = "0123456789"; break;
+                    case 1: result = "123456789"; break;
+                    case 2: result = "23456789"; break;
+                    case 3: result = "3456789"; break;
+                    case 4: result = "456789"; break;
+                    case 5: result = "56789"; break;
+                    case 6: result = "6789"; break;
+                    case 7: result = "789"; break;
+                    case 8: result = "89"; break;
+                    case 9: result = "9"; break;
+                    default: result = "Invalid input"; break;
+                }
+
+                const outputDiv = document.getElementById("outputPrintDigits");
+                outputDiv.innerText = result;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+
+        <!-- ----------------SET 2----------------- -->
+        <h2>Final Exam Question - 241 (Set - 2)</h2>
+
+
+        <!-- Question 1 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 1: Volume and Surface Area of a Sphere</th>
+            </tr>
+            <tr>
+                <td>
+                    The volume of a sphere is given by the formula \(V = \frac{4}{3} \pi r^3\), and the surface area of
+                    a sphere is given by the formula \(A = 4 \pi r^2\), where \(r\) is the radius of the sphere. Write a
+                    program that will take the radius of a sphere as input and compute and print the volume and surface
+                    area of the sphere. (\(\pi = 3.1416\))
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>10.5</td>
+                            <td>Volume = 4849.06, Area = 1385.45</td>
+                        </tr>
+                        <tr>
+                            <td>12.9</td>
+                            <td>Volume = 8992.05, Area = 2091.17</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    float radius, volume, area;
+    const float pi = 3.1416;
+
+    scanf("%f", &radius);
+
+    volume = (4.0/3.0) * pi * pow(radius, 3);
+    area = 4 * pi * pow(radius, 2);
+
+    printf("Volume = %.2f, Area = %.2f\n", volume, area);
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code1')"></i>
+                        <pre><code id="code1" class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    float radius, volume, area;
+    const float pi = 3.1416;
+
+    scanf("%f", &radius);
+
+    volume = (4.0/3.0) * pi * pow(radius, 3);
+    area = 4 * pi * pow(radius, 2);
+
+    printf("Volume = %.2f, Area = %.2f\n", volume, area);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="radiusInput" placeholder="Enter radius" step="any">
+                    <button class="run-btn" onclick="runSphereCalculations()">Run <i
+                            class="fa-solid fa-play"></i></button>
+                    <div id="outputSphereCalculations"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runSphereCalculations() {
+                const radius = parseFloat(document.getElementById("radiusInput").value);
+
+                if (isNaN(radius) || radius <= 0) {
+                    alert("Please enter a valid positive radius.");
+                    return;
+                }
+
+                const pi = 3.1416;
+                const volume = (4.0 / 3.0) * pi * Math.pow(radius, 3);
+                const area = 4 * pi * Math.pow(radius, 2);
+
+                const outputDiv = document.getElementById("outputSphereCalculations");
+                outputDiv.innerText = `Volume = ${volume.toFixed(2)}, Area = ${area.toFixed(2)}`;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 2 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 2: Evaluate Function \(f(x, y)\)</th>
+            </tr>
+            <tr>
+                <td>
+                    A function \(f(x, y)\) is defined as follows:
+                    \[
+                    f(x, y) =
+                    \begin{cases}
+                    x^3 + 5xy, & \text{if } x < 0 \text{ and } y < 0 \\ 4y, & \text{if } x < 0 \text{ and } y> 0 \\
+                        \frac{1}{x + y}, & \text{if } x \geq 0 \text{ and } y \geq 0 \\
+                        \end{cases}
+                        \]
+                        Write a C program to evaluate \(f(x, y)\) following the above definition. For values not in the
+                        mentioned range, your program should output “Undefined”.
+                        <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                            <tr>
+                                <th>Sample Input</th>
+                                <th>Sample Output</th>
+                            </tr>
+                            <tr>
+                                <td>-3.8 -2.2</td>
+                                <td>-13.072</td>
+                            </tr>
+                            <tr>
+                                <td>-0.6 0</td>
+                                <td>Undefined</td>
+                            </tr>
+                            <tr>
+                                <td>5 2</td>
+                                <td>0.143</td>
+                            </tr>
+                        </table>
+                        <br><br>
+                        <b>Given Code:</b>
+                        <pre><code>
+#include &lt;stdio.h&gt;
+
+float f(float x, float y) {
+    if (x < 0 && y < 0) {
+        return x * x * x + 5 * x * y;
+    } else if (x < 0 && y > 0) {
+        return 4 * y;
+    } else if (x >= 0 && y >= 0) {
+        return 1.0 / (x + y);
+    } else {
+        return -1; // Undefined for all other cases
+    }
+}
+
+int main() {
+    float x, y;
+    scanf("%f %f", &x, &y);
+
+    float result = f(x, y);
+    if (result == -1) {
+        printf("Undefined\n");
+    } else {
+        printf("%.3f\n", result);
+    }
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code2')"></i>
+                        <pre><code id="code2" class="language-c">
+#include &lt;stdio.h&gt;
+
+float f(float x, float y) {
+    if (x < 0 && y < 0) {
+        return x * x * x + 5 * x * y;
+    } else if (x < 0 && y > 0) {
+        return 4 * y;
+    } else if (x >= 0 && y >= 0) {
+        return 1.0 / (x + y);
+    } else {
+        return -1; // Undefined for all other cases
+    }
+}
+
+int main() {
+    float x, y;
+    scanf("%f %f", &x, &y);
+
+    float result = f(x, y);
+    if (result == -1) {
+        printf("Undefined\n");
+    } else {
+        printf("%.3f\n", result);
+    }
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="xInput" placeholder="Enter x" step="any">
+                    <input type="number" id="yInput" placeholder="Enter y" step="any">
+                    <button class="run-btn" onclick="runFunctionEvaluation()">Run <i
+                            class="fa-solid fa-play"></i></button>
+                    <div id="outputFunctionEvaluation"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runFunctionEvaluation() {
+                const x = parseFloat(document.getElementById("xInput").value);
+                const y = parseFloat(document.getElementById("yInput").value);
+
+                if (isNaN(x) || isNaN(y)) {
+                    alert("Please enter valid values for x and y.");
+                    return;
+                }
+
+                let result;
+                if (x < 0 && y < 0) {
+                    result = x * x * x + 5 * x * y;
+                } else if (x < 0 && y > 0) {
+                    result = 4 * y;
+                } else if (x >= 0 && y >= 0) {
+                    result = 1.0 / (x + y);
+                } else {
+                    result = "Undefined";
+                }
+
+                const outputDiv = document.getElementById("outputFunctionEvaluation");
+                if (result === "Undefined") {
+                    outputDiv.innerText = result;
+                } else {
+                    outputDiv.innerText = result.toFixed(3);
+                }
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 3 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 3: Find the Minimum and Identify the Number</th>
+            </tr>
+            <tr>
+                <td>
+                    Take three integers as input and find the minimum among them. If the minimum number is odd, print
+                    “Odd, Red Number”; otherwise, print “Even, Blue Number”.
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>34 45 40</td>
+                            <td>Even, Blue Number</td>
+                        </tr>
+                        <tr>
+                            <td>11 15 17</td>
+                            <td>Odd, Red Number</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    int min = a;
+
+    if (b < min) {
+        min = b;
+    }
+    if (c < min) {
+        min = c;
+    }
+
+    if (min % 2 == 0) {
+        printf("Even, Blue Number\n");
+    } else {
+        printf("Odd, Red Number\n");
+    }
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code3')"></i>
+                        <pre><code id="code3" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    int min = a;
+
+    if (b < min) {
+        min = b;
+    }
+    if (c < min) {
+        min = c;
+    }
+
+    if (min % 2 == 0) {
+        printf("Even, Blue Number\n");
+    } else {
+        printf("Odd, Red Number\n");
+    }
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="aInput" placeholder="Enter first number">
+                    <input type="number" id="bInput" placeholder="Enter second number">
+                    <input type="number" id="cInput" placeholder="Enter third number">
+                    <button class="run-btn" onclick="runMinNumberTest()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputMinNumberTest"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runMinNumberTest() {
+                const a = parseInt(document.getElementById("aInput").value);
+                const b = parseInt(document.getElementById("bInput").value);
+                const c = parseInt(document.getElementById("cInput").value);
+
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("Please enter valid integers for all three inputs.");
+                    return;
+                }
+
+                let min = a;
+
+                if (b < min) {
+                    min = b;
+                }
+                if (c < min) {
+                    min = c;
+                }
+
+                let output;
+                if (min % 2 === 0) {
+                    output = "Even, Blue Number";
+                } else {
+                    output = "Odd, Red Number";
+                }
+
+                const outputDiv = document.getElementById("outputMinNumberTest");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 4 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 4: Valid or Invalid Triangle</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a C program that asks the user to input three numbers representing the lengths of the sides of
+                    a triangle. Using if/else statements, determine and print whether the triangle is valid or not. If
+                    the triangle is valid, print “Valid Triangle.” If the triangle is invalid, print “Invalid Triangle.”
+                    <br><b>Hints:</b> A triangle is valid if the sum of any two sides is greater than the third side.
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>2 9 10</td>
+                            <td>Valid Triangle.</td>
+                        </tr>
+                        <tr>
+                            <td>1 2 3</td>
+                            <td>Invalid Triangle.</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a + b > c && a + c > b && b + c > a) {
+        printf("Valid Triangle.\n");
+    } else {
+        printf("Invalid Triangle.\n");
+    }
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code4')"></i>
+                        <pre><code id="code4" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a + b > c && a + c > b && b + c > a) {
+        printf("Valid Triangle.\n");
+    } else {
+        printf("Invalid Triangle.\n");
+    }
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="sideAInput" placeholder="Enter first side length">
+                    <input type="number" id="sideBInput" placeholder="Enter second side length">
+                    <input type="number" id="sideCInput" placeholder="Enter third side length">
+                    <button class="run-btn" onclick="runTriangleTest()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputTriangleTest"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runTriangleTest() {
+                const a = parseInt(document.getElementById("sideAInput").value);
+                const b = parseInt(document.getElementById("sideBInput").value);
+                const c = parseInt(document.getElementById("sideCInput").value);
+
+                if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                    alert("Please enter valid numbers for all three sides.");
+                    return;
+                }
+
+                let output;
+                if (a + b > c && a + c > b && b + c > a) {
+                    output = "Valid Triangle.";
+                } else {
+                    output = "Invalid Triangle.";
+                }
+
+                const outputDiv = document.getElementById("outputTriangleTest");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 5 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 5: Student ID Operation</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a program that will take the last 4 digits of your student ID and an operator as input. The
+                    program will determine the last digit of your student ID and perform an operation on that digit
+                    three times using switch case statements.
+                    <table border="1" style="border-collapse: collapse; margin-top: 10px;">
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>1145 *</td>
+                            <td>5 * 5 * 5 = 125</td>
+                        </tr>
+                        <tr>
+                            <td>1123 +</td>
+                            <td>3 + 3 + 3 = 9</td>
+                        </tr>
+                        <tr>
+                            <td>1128 -</td>
+                            <td>8 - 8 - 8 = -8</td>
+                        </tr>
+                        <tr>
+                            <td>1122 ?</td>
+                            <td>The input is invalid</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int studentID, lastDigit;
+    char operator;
+
+    scanf("%d %c", &studentID, &operator);
+
+    lastDigit = studentID % 10;
+
+    switch(operator) {
+        case '+':
+            printf("%d + %d + %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit + lastDigit + lastDigit);
+            break;
+        case '-':
+            printf("%d - %d - %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit - lastDigit - lastDigit);
+            break;
+        case '*':
+            printf("%d * %d * %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit * lastDigit * lastDigit);
+            break;
+        default:
+            printf("The input is invalid\n");
+    }
+
+    return 0;
+}
+            </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code5')"></i>
+                        <pre><code id="code5" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int studentID, lastDigit;
+    char operator;
+
+    scanf("%d %c", &studentID, &operator);
+
+    lastDigit = studentID % 10;
+
+    switch(operator) {
+        case '+':
+            printf("%d + %d + %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit + lastDigit + lastDigit);
+            break;
+        case '-':
+            printf("%d - %d - %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit - lastDigit - lastDigit);
+            break;
+        case '*':
+            printf("%d * %d * %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit * lastDigit * lastDigit);
+            break;
+        default:
+            printf("The input is invalid\n");
+    }
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="studentIDInput" placeholder="Enter last 4 digits of student ID">
+                    <input type="text" id="operatorInput" placeholder="Enter operator (+, -, *)">
+                    <button class="run-btn" onclick="runStudentIDTest()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputStudentIDTest"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runStudentIDTest() {
+                const studentID = parseInt(document.getElementById("studentIDInput").value);
+                const operator = document.getElementById("operatorInput").value.trim();
+
+                if (isNaN(studentID) || studentID < 1000 || studentID > 9999 || !['+', '-', '*'].includes(operator)) {
+                    alert("Please enter a valid student ID (4 digits) and operator (+, -, *).");
+                    return;
+                }
+
+                const lastDigit = studentID % 10;
+                let output = "";
+
+                switch (operator) {
+                    case "+":
+                        output = `${lastDigit} + ${lastDigit} + ${lastDigit} = ${lastDigit + lastDigit + lastDigit}`;
+                        break;
+                    case "-":
+                        output = `${lastDigit} - ${lastDigit} - ${lastDigit} = ${lastDigit - lastDigit - lastDigit}`;
+                        break;
+                    case "*":
+                        output = `${lastDigit} * ${lastDigit} * ${lastDigit} = ${lastDigit * lastDigit * lastDigit}`;
+                        break;
+                    default:
+                        output = "The input is invalid";
+                }
+
+                const outputDiv = document.getElementById("outputStudentIDTest");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+        <script type=module src="Assets/Scripts/footer.js"></script>
+        <my-footer></my-footer>        
+    <script src="Assets/Scripts/scroll-top-bottom.js"></script>
+</body>
+
+</html>

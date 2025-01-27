@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <link rel="stylesheet" href="Assets/CSS/scroll-top-bottom.css">
+</head>
+
+<body>
+    <script type=module src="Assets/Scripts/header.js"></script>
+    <my-header></my-header>
+    <script src="Assets/Scripts/search-header.js"></script><nav class="breadcrumb"><a href="index.html">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script><lord-icon
+            src="https://cdn.lordicon.com/laqlvddb.json" trigger="loop" colors="primary:#ffffff,secondary:#ff0040"
+            style="width:20px;height:15px;margin-left:-12px;font-weight:700"></lord-icon>
+    </a><span>&gt;</span><a href="index.html">ICS</a><span>/</span><a
+        href="index.html">Final</a><span>/</span><span class="bc-current-page">Batch - 242</span>
+</nav>
+<div class="scroll-buttons-container" id="scrollButtons">
+    <button id="scrollUp" title="Go to Top"><i class="fa-solid fa-arrow-up"></i></button>
+    <button id="scrollDown" title="Go to Bottom"><i class="fa-solid fa-arrow-down"></i></button>
+</div>
+    <div class="container">
+        <!-- ----------------SET 1----------------- -->
+        <h2>Final Exam Question - 242 (Set - 1)</h2>
+        <!-- Question 1 -->
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+            <tr>
+                <th class="q-title">Question 1: Flowchart</th>
+            </tr>
+            <tr>
+                <td>
+                    Draw a flowchart for a program that takes an integer input and prints whether it is positive or
+                    negative.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <style>
+                         .svg-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+                    </style>
+                    <div class="svg-container">
+                        <img src="Assets/Image/Flowchart-1.svg" alt="Flowchart">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <!-- Question 2 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 2: Correct the Errors in a C Program</th>
+            </tr>
+            <tr>
+                <td>
+                    The given C code has errors. Identify and correct the errors. Ensure that user inputs are printed
+                    correctly.<br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int x;
+    float y;
+    printf("Enter an integer: ");
+    scanf("%d", x);
+    printf("Enter a float: ");
+    scanf("%d", y);
+    return 0;
+}
+            </code></pre>
+                    <br>
+                    <b>Corrected Code:</b>
+                    <table>
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Enter an integer: 5<br>
+                                Enter a float: 3.14
+                            </td>
+                            <td>
+                                You entered integer: 5 and float: 3.14
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code2')"></i>
+                        <pre><code id="code2" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int x;
+    float y;
+    printf("Enter an integer: ");
+    scanf("%d", &x); // Added & before x
+    printf("Enter a float: ");
+    scanf("%f", &y); // Changed %d to %f and added & before y
+    printf("You entered integer: %d and float: %.2f\n", x, y); // Added print statement for inputs
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="intInput" placeholder="Enter an integer">
+                    <input type="number" id="floatInput" placeholder="Enter a float" step="any">
+                    <button class="run-btn" onclick="runFinal142Set1Ques2()">Run <i class="fa-solid fa-play"></i></button></button>
+                    <div id="outputFinal142Set1Ques2" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runFinal142Set1Ques2() {
+                const x = parseInt(document.getElementById("intInput").value);
+                const y = parseFloat(document.getElementById("floatInput").value);
+
+                if (isNaN(x) || isNaN(y)) {
+                    alert("Please enter valid inputs.");
+                    return;
+                }
+
+                const output = `You entered integer: ${x} and float: ${y.toFixed(2)}`;
+                const outputDiv = document.getElementById("outputFinal142Set1Ques2");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 3 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 3: Calculate Discounts</th>
+            </tr>
+            <tr>
+                <td>
+                    Consider the following C program for calculating discounts:<br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    float amount, discount, finalAmount;
+    printf("Enter the purchase amount: $");
+    scanf("%f", &amount);
+
+    if (amount > 500) {
+        discount = amount * 0.20;
+    } else if (amount > 200) {
+        discount = amount * 0.15;
+    } else if (amount > 100) {
+        discount = amount * 0.10;
+    } else if (amount > 50) {
+        discount = amount * 0.05;
+    } else {
+        discount = 0;
+    }
+
+    finalAmount = amount - discount;
+
+    printf("Original amount: $%.2f\n", amount);
+    printf("Discount applied: $%.2f\n", discount);
+    printf("Final amount to be paid: $%.2f\n", finalAmount);
+
+    return 0;
+}
+            </code></pre>
+                    <br>
+                    <b>Question:</b> What will be the discount and final amount to be paid if the user enters a purchase
+                    amount of $195?<br><br>
+                    <b>Answer:</b>
+                    <table>
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>195</td>
+                            <td>
+                                Original amount: $195.00<br>
+                                Discount applied: $19.50<br>
+                                Final amount to be paid: $175.50
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>550</td>
+                            <td>
+                                Original amount: $550.00<br>
+                                Discount applied: $110.00<br>
+                                Final amount to be paid: $440.00
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code3')"></i>
+                        <pre><code id="code3" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    float amount, discount, finalAmount;
+    printf("Enter the purchase amount: $");
+    scanf("%f", &amount);
+
+    if (amount > 500) {
+        discount = amount * 0.20;
+    } else if (amount > 200) {
+        discount = amount * 0.15;
+    } else if (amount > 100) {
+        discount = amount * 0.10;
+    } else if (amount > 50) {
+        discount = amount * 0.05;
+    } else {
+        discount = 0;
+    }
+
+    finalAmount = amount - discount;
+
+    printf("Original amount: $%.2f\n", amount);
+    printf("Discount applied: $%.2f\n", discount);
+    printf("Final amount to be paid: $%.2f\n", finalAmount);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="amountInput" placeholder="Enter purchase amount" step="any">
+                    <button class="run-btn" onclick="runDiscountProgram()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputDiscountProgram" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runDiscountProgram() {
+                const amount = parseFloat(document.getElementById("amountInput").value);
+
+                if (isNaN(amount) || amount < 0) {
+                    alert("Please enter a valid purchase amount.");
+                    return;
+                }
+
+                let discount = 0;
+
+                if (amount > 500) {
+                    discount = amount * 0.20;
+                } else if (amount > 200) {
+                    discount = amount * 0.15;
+                } else if (amount > 100) {
+                    discount = amount * 0.10;
+                } else if (amount > 50) {
+                    discount = amount * 0.05;
+                }
+
+                const finalAmount = amount - discount;
+
+                const output = `Original amount: $${amount.toFixed(2)}\nDiscount applied: $${discount.toFixed(2)}\nFinal amount to be paid: $${finalAmount.toFixed(2)}`;
+                const outputDiv = document.getElementById("outputDiscountProgram");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 4 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 4: Calculate Playground Perimeter and Fencing Cost</th>
+            </tr>
+            <tr>
+                <td>
+                    Complete the following program to calculate:
+                    <ul>
+                        <li>The perimeter of a playground</li>
+                        <li>The total cost of fencing</li>
+                    </ul>
+                    Print both the perimeter and the total cost.<br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    float playgroundLength, playgroundWidth, fenceCostPerMeter = 15.0;
+    float perimeter, totalCost;
+
+    printf("Enter the length of the playground: ");
+    scanf("%f", &playgroundLength);
+    printf("Enter the width of the playground: ");
+    scanf("%f", &playgroundWidth);
+
+    return 0;
+}
+            </code></pre>
+                    <br>
+                    <b>Corrected Code:</b>
+                    <table>
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Length = 50<br>
+                                Width = 30
+                            </td>
+                            <td>
+                                Perimeter = 160.00 meters<br>
+                                Total Cost = $2400.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Length = 100<br>
+                                Width = 50
+                            </td>
+                            <td>
+                                Perimeter = 300.00 meters<br>
+                                Total Cost = $4500.00
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code4')"></i>
+                        <pre><code id="code4" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    float playgroundLength, playgroundWidth, fenceCostPerMeter = 15.0;
+    float perimeter, totalCost;
+
+    printf("Enter the length of the playground: ");
+    scanf("%f", &playgroundLength);
+    printf("Enter the width of the playground: ");
+    scanf("%f", &playgroundWidth);
+
+    perimeter = 2 * (playgroundLength + playgroundWidth);
+    totalCost = perimeter * fenceCostPerMeter;
+
+    printf("Perimeter = %.2f meters\n", perimeter);
+    printf("Total Cost = $%.2f\n", totalCost);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="lengthInput" placeholder="Enter playground length" step="any">
+                    <input type="number" id="widthInput" placeholder="Enter playground width" step="any">
+                    <button class="run-btn" onclick="runPlaygroundProgram()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputPlaygroundProgram" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runPlaygroundProgram() {
+                const length = parseFloat(document.getElementById("lengthInput").value);
+                const width = parseFloat(document.getElementById("widthInput").value);
+
+                if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+                    alert("Please enter valid positive values for length and width.");
+                    return;
+                }
+
+                const perimeter = 2 * (length + width);
+                const totalCost = perimeter * 15.0;
+
+                const output = `Perimeter = ${perimeter.toFixed(2)} meters\nTotal Cost = $${totalCost.toFixed(2)}`;
+                const outputDiv = document.getElementById("outputPlaygroundProgram");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 5 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 5: Internet Data Package Cost Calculator</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a C program for an Internet Data Package Cost Calculator. The packages are as follows:
+                    <ul>
+                        <li>Basic Package: 50 Taka per GB</li>
+                        <li>Standard Package: 100 Taka per GB</li>
+                        <li>Premium Package: 150 Taka per GB</li>
+                    </ul>
+                    The program should:
+                    <ol>
+                        <li>Ask the user to choose a package by entering 1 for Basic, 2 for Standard, or 3 for Premium.
+                        </li>
+                        <li>Ask the user to input the number of GBs they want to use.</li>
+                        <li>Calculate the total cost based on the selected package and data usage.</li>
+                        <li>Print the total cost and the selected package type.</li>
+                    </ol>
+                    <br>
+                    <b>Input 1:</b>
+                    <pre>
+Select the data package:
+1. Basic Package
+2. Standard Package
+3. Premium Package
+Enter your choice: 3
+Enter the number of GBs you want to use: 50
+            </pre>
+                    <b>Output 1:</b>
+                    <pre>
+You selected the Premium Package.
+The total charge for your package is:
+7500.00
+            </pre>
+                    <b>Input 2:</b>
+                    <pre>
+Select the data package:
+1. Basic Package
+2. Standard Package
+3. Premium Package
+Enter your choice: 4
+            </pre>
+                    <b>Output 2:</b>
+                    <pre>
+Invalid package type selected.
+            </pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code5')"></i>
+                        <pre><code id="code5" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int packageType;
+    float gb, cost;
+
+    printf("Select the data package:\n");
+    printf("1. Basic Package\n");
+    printf("2. Standard Package\n");
+    printf("3. Premium Package\n");
+    printf("Enter your choice: ");
+    scanf("%d", &packageType);
+
+    if (packageType < 1 || packageType > 3) {
+        printf("Invalid package type selected.\n");
+        return 0;
+    }
+
+    printf("Enter the number of GBs you want to use: ");
+    scanf("%f", &gb);
+
+    if (packageType == 1) {
+        cost = gb * 50;
+        printf("You selected the Basic Package.\n");
+    } else if (packageType == 2) {
+        cost = gb * 100;
+        printf("You selected the Standard Package.\n");
+    } else if (packageType == 3) {
+        cost = gb * 150;
+        printf("You selected the Premium Package.\n");
+    }
+
+    printf("The total charge for your package is: %.2f\n", cost);
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="packageType">Select Package Type:</label>
+                    <select id="packageType" class="choice">>
+                        <option value="1">Basic Package</option>
+                        <option value="2">Standard Package</option>
+                        <option value="3">Premium Package</option>
+                    </select>
+                    <br>
+                    <label for="gbInput">Enter GB Usage:</label>
+                    <input type="number" id="gbInput" placeholder="Enter number of GBs" step="any">
+                    <button class="run-btn" onclick="runDataPackageProgram()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputDataPackage" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runDataPackageProgram() {
+                const packageType = parseInt(document.getElementById("packageType").value);
+                const gb = parseFloat(document.getElementById("gbInput").value);
+
+                if (isNaN(gb) || gb <= 0) {
+                    alert("Please enter a valid number of GBs.");
+                    return;
+                }
+
+                let cost = 0;
+                let packageName = "";
+
+                if (packageType === 1) {
+                    cost = gb * 50;
+                    packageName = "Basic Package";
+                } else if (packageType === 2) {
+                    cost = gb * 100;
+                    packageName = "Standard Package";
+                } else if (packageType === 3) {
+                    cost = gb * 150;
+                    packageName = "Premium Package";
+                } else {
+                    alert("Invalid package type selected.");
+                    return;
+                }
+
+                const output = `You selected the ${packageName}.\nThe total charge for your package is: ${cost.toFixed(2)}`;
+                const outputDiv = document.getElementById("outputDataPackage");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+
+
+        <!-- ----------------SET 2----------------- -->
+
+        <h2>Final Exam Question - 242 (Set - 2)</h2>
+
+        <!-- Question 1 -->
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+            <tr>
+                <th class="q-title">Question 1: Flowchart</th>
+            </tr>
+            <tr>
+                <td>
+                    Write pseudocode or draw a flowchart for a program that calculates the square of a given number.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="svg-container">
+                        <img src="Assets/Image/Flowchart-2.svg" alt="Flowchart">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <!-- Question 2 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 2: Identify and Correct Errors in a C Program</th>
+            </tr>
+            <tr>
+                <td>
+                    The given C code has errors. Identify and correct the errors. Ensure that user inputs are printed
+                    correctly.<br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int x;
+    double y;
+    printf("Enter an integer: ");
+    scanf("%d", x);
+    printf("Enter a double: ");
+    scanf("%f", y);
+    return 0;
+}
+            </code></pre>
+                    <br>
+                    <b>Corrected Code:</b>
+                    <table>
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Enter an integer: 10<br>
+                                Enter a double: 3.14
+                            </td>
+                            <td>
+                                You entered integer: 10<br>
+                                You entered double: 3.14
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code2')"></i>
+                        <pre><code id="code2" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int x;
+    double y;
+    printf("Enter an integer: ");
+    scanf("%d", &x); // Added & before x
+    printf("Enter a double: ");
+    scanf("%lf", &y); // Changed %f to %lf and added & before y
+    printf("You entered integer: %d\n", x);
+    printf("You entered double: %.2f\n", y);
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="intInput" placeholder="Enter an integer">
+                    <input type="text" id="doubleInput" placeholder="Enter a double">
+                    <button class="run-btn" onclick="runQuestion2()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputQuestion2" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runQuestion2() {
+                const intInput = document.getElementById("intInput").value.trim();
+                const doubleInput = document.getElementById("doubleInput").value.trim();
+                const x = Number(intInput);
+                const y = Number(doubleInput);
+
+                if (isNaN(x) || isNaN(y)) {
+                    alert("Please enter valid numeric inputs.");
+                    return;
+                }
+
+                const output = `You entered integer: ${Math.trunc(x)}\nYou entered double: ${y.toFixed(2)}`;
+                const outputDiv = document.getElementById("outputQuestion2");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+        <!-- Question 3 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 3: Calculating Discounts</th>
+            </tr>
+            <tr>
+                <td>
+                    Consider the following C program for calculating discounts:<br><br>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    float amount, discount, finalAmount;
+    printf("Enter the purchase amount: $");
+    scanf("%f", &amount);
+
+    if (amount > 500) {
+        discount = amount * 0.20;
+    } else if (amount > 200) {
+        discount = amount * 0.15;
+    } else if (amount > 100) {
+        discount = amount * 0.10;
+    } else if (amount > 50) {
+        discount = amount * 0.05;
+    } else {
+        discount = 0;
+    }
+
+    finalAmount = amount - discount;
+
+    printf("Original amount: $%.2f\n", amount);
+    printf("Discount applied: $%.2f\n", discount);
+    printf("Final amount to be paid: $%.2f\n", finalAmount);
+
+    return 0;
+}
+            </code></pre>
+                    <br>
+                    <b>Question:</b> What will be the discount and final amount to be paid if the user enters a purchase
+                    amount of $295?<br><br>
+                    <b>Answer:</b>
+                    <table>
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Enter purchase amount: $295
+                            </td>
+                            <td>
+                                Original amount: $295.00<br>
+                                Discount applied: $44.25<br>
+                                Final amount to be paid: $250.75
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Enter purchase amount: $80
+                            </td>
+                            <td>
+                                Original amount: $80.00<br>
+                                Discount applied: $4.00<br>
+                                Final amount to be paid: $76.00
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code3')"></i>
+                        <pre><code id="code3" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    float amount, discount, finalAmount;
+    printf("Enter the purchase amount: $");
+    scanf("%f", &amount);
+
+    if (amount > 500) {
+        discount = amount * 0.20;
+    } else if (amount > 200) {
+        discount = amount * 0.15;
+    } else if (amount > 100) {
+        discount = amount * 0.10;
+    } else if (amount > 50) {
+        discount = amount * 0.05;
+    } else {
+        discount = 0;
+    }
+
+    finalAmount = amount - discount;
+
+    printf("Original amount: $%.2f\n", amount);
+    printf("Discount applied: $%.2f\n", discount);
+    printf("Final amount to be paid: $%.2f\n", finalAmount);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="purchaseInput" placeholder="Enter purchase amount" step="any">
+                    <button class="run-btn" onclick="runDiscountCalculator()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputDiscountCalculator" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runDiscountCalculator() {
+                const amount = parseFloat(document.getElementById("purchaseInput").value);
+
+                if (isNaN(amount) || amount < 0) {
+                    alert("Please enter a valid purchase amount.");
+                    return;
+                }
+
+                let discount = 0;
+
+                if (amount > 500) {
+                    discount = amount * 0.20;
+                } else if (amount > 200) {
+                    discount = amount * 0.15;
+                } else if (amount > 100) {
+                    discount = amount * 0.10;
+                } else if (amount > 50) {
+                    discount = amount * 0.05;
+                }
+
+                const finalAmount = amount - discount;
+
+                const output = `Original amount: $${amount.toFixed(2)}\nDiscount applied: $${discount.toFixed(2)}\nFinal amount to be paid: $${finalAmount.toFixed(2)}`;
+                const outputDiv = document.getElementById("outputDiscountCalculator");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+        <!-- Question 4 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 4: Calculate Garden and Road Areas</th>
+            </tr>
+            <tr>
+                <td>
+                    Complete the following program to calculate:
+                    <ul>
+                        <li>The total area (garden + road) by adding the road width on all sides</li>
+                        <li>The area of the road</li>
+                    </ul>
+                    <b>Given Code:</b>
+                    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    float gardenLength, gardenWidth, roadWidth = 2.0;
+    float totalArea, gardenArea, roadArea;
+
+    printf("Enter the length of the garden: ");
+    scanf("%f", &gardenLength);
+    printf("Enter the width of the garden: ");
+    scanf("%f", &gardenWidth);
+
+    gardenArea = gardenLength * gardenWidth;
+
+    return 0;
+}
+            </code></pre>
+                    <br>
+                    <b>Corrected Code:</b>
+                    <table>
+                        <tr>
+                            <th>Sample Input</th>
+                            <th>Sample Output</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Garden Length = 10<br>
+                                Garden Width = 5
+                            </td>
+                            <td>
+                                Total Area = 112.00 square meters<br>
+                                Garden Area = 50.00 square meters<br>
+                                Road Area = 62.00 square meters
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Garden Length = 15<br>
+                                Garden Width = 10
+                            </td>
+                            <td>
+                                Total Area = 238.00 square meters<br>
+                                Garden Area = 150.00 square meters<br>
+                                Road Area = 88.00 square meters
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code4')"></i>
+                        <pre><code id="code4" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    float gardenLength, gardenWidth, roadWidth = 2.0;
+    float totalArea, gardenArea, roadArea;
+
+    printf("Enter the length of the garden: ");
+    scanf("%f", &gardenLength);
+    printf("Enter the width of the garden: ");
+    scanf("%f", &gardenWidth);
+
+    gardenArea = gardenLength * gardenWidth;
+    totalArea = (gardenLength + 2 * roadWidth) * (gardenWidth + 2 * roadWidth);
+    roadArea = totalArea - gardenArea;
+
+    printf("Total Area = %.2f square meters\n", totalArea);
+    printf("Garden Area = %.2f square meters\n", gardenArea);
+    printf("Road Area = %.2f square meters\n", roadArea);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="gardenLengthInput" placeholder="Enter garden length" step="any">
+                    <input type="number" id="gardenWidthInput" placeholder="Enter garden width" step="any">
+                    <button class="run-btn" onclick="runGardenProgram()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputGardenProgram" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runGardenProgram() {
+                const gardenLength = parseFloat(document.getElementById("gardenLengthInput").value);
+                const gardenWidth = parseFloat(document.getElementById("gardenWidthInput").value);
+                const roadWidth = 2.0;
+
+                if (isNaN(gardenLength) || isNaN(gardenWidth) || gardenLength <= 0 || gardenWidth <= 0) {
+                    alert("Please enter valid positive values for garden length and width.");
+                    return;
+                }
+
+                const gardenArea = gardenLength * gardenWidth;
+                const totalArea = (gardenLength + 2 * roadWidth) * (gardenWidth + 2 * roadWidth);
+                const roadArea = totalArea - gardenArea;
+
+                const output = `Total Area = ${totalArea.toFixed(2)} square meters\nGarden Area = ${gardenArea.toFixed(2)} square meters\nRoad Area = ${roadArea.toFixed(2)} square meters`;
+                const outputDiv = document.getElementById("outputGardenProgram");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+
+
+
+        <!-- Question 5 -->
+        <table>
+            <tr>
+                <th class="q-title">Question 5: Transportation Service Charge Calculator</th>
+            </tr>
+            <tr>
+                <td>
+                    Write a C program for a Transportation Service Charge Calculator. The services are as follows:
+                    <ul>
+                        <li>Car: 500 Taka per kilometer</li>
+                        <li>Bus: 300 Taka per kilometer</li>
+                        <li>Bike: 100 Taka per kilometer</li>
+                    </ul>
+                    The program should:
+                    <ol>
+                        <li>Ask the user to choose a service by entering 1 for Car, 2 for Bus, or 3 for Bike.</li>
+                        <li>Ask the user to input the number of kilometers they want to travel.</li>
+                        <li>Calculate the total charge based on the selected service and distance.</li>
+                        <li>Print the total charge and service type.</li>
+                    </ol>
+                    <b>Input 1:</b>
+                    <pre>
+Select the service:
+1. Car
+2. Bus
+3. Bike
+Enter your choice: 2
+Enter the distance: 2.5
+            </pre>
+                    <b>Output 1:</b>
+                    <pre>
+You selected Bus.
+The total charge for your trip is: 750.00
+            </pre>
+                    <b>Input 2:</b>
+                    <pre>
+Select the service:
+1. Car
+2. Bus
+3. Bike
+Enter your choice: 5
+Enter the distance: 5
+            </pre>
+                    <b>Output 2:</b>
+                    <pre>
+Invalid service type selected.
+            </pre>
+                </td>
+            </tr>
+            <tr>
+                <th class="solution">Solution</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-container">
+                        <i class="fas fa-copy copy-icon" onclick="copyCode('code5')"></i>
+                        <pre><code id="code5" class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int serviceType;
+    float distance, charge;
+
+    printf("Select the service:\n");
+    printf("1. Car\n");
+    printf("2. Bus\n");
+    printf("3. Bike\n");
+    printf("Enter your choice: ");
+    scanf("%d", &serviceType);
+
+    if (serviceType < 1 || serviceType > 3) {
+        printf("Invalid service type selected.\n");
+        return 0;
+    }
+
+    printf("Enter the distance (in kilometers): ");
+    scanf("%f", &distance);
+
+    if (serviceType == 1) {
+        charge = distance * 500;
+        printf("You selected Car.\n");
+    } else if (serviceType == 2) {
+        charge = distance * 300;
+        printf("You selected Bus.\n");
+    } else if (serviceType == 3) {
+        charge = distance * 100;
+        printf("You selected Bike.\n");
+    }
+
+    printf("The total charge for your trip is: %.2f\n", charge);
+
+    return 0;
+}
+                </code></pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="test">Test</th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="serviceType">Select Service:</label>
+                    <select id="serviceType" class="choice">
+                        <option value="1">Car</option>
+                        <option value="2">Bus</option>
+                        <option value="3">Bike</option>
+                    </select>
+                    <br>
+                    <label for="distanceInput">Enter Distance (in kilometers):</label>
+                    <input type="number" id="distanceInput" placeholder="Enter distance" step="any">
+                    <button class="run-btn" onclick="runServiceCalculator()">Run <i class="fa-solid fa-play"></i></button>
+                    <div id="outputServiceCalculator" </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            function runServiceCalculator() {
+                const serviceType = parseInt(document.getElementById("serviceType").value);
+                const distance = parseFloat(document.getElementById("distanceInput").value);
+
+                if (isNaN(distance) || distance <= 0) {
+                    alert("Please enter a valid distance.");
+                    return;
+                }
+
+                let charge = 0;
+                let serviceName = "";
+
+                if (serviceType === 1) {
+                    charge = distance * 500;
+                    serviceName = "Car";
+                } else if (serviceType === 2) {
+                    charge = distance * 300;
+                    serviceName = "Bus";
+                } else if (serviceType === 3) {
+                    charge = distance * 100;
+                    serviceName = "Bike";
+                } else {
+                    alert("Invalid service type selected.");
+                    return;
+                }
+
+                const output = `You selected ${serviceName}.\nThe total charge for your trip is: ${charge.toFixed(2)}`;
+                const outputDiv = document.getElementById("outputServiceCalculator");
+                outputDiv.innerText = output;
+                outputDiv.style.display = "block";
+            }
+
+            function copyCode(id) {
+                const code = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(code);
+                alert("Code copied to clipboard!");
+            }
+        </script>
+         <script type=module src="Assets/Scripts/footer.js"></script>
+         <my-footer></my-footer>        
+         <script src="Assets/Scripts/scroll-top-bottom.js"></script>
+</body>
+</html>

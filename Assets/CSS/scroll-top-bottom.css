@@ -1,0 +1,68 @@
+.scroll-buttons-container {
+    position: fixed;
+    bottom: 20px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scroll-buttons-container.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-buttons-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #24242480;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 997;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .scroll-buttons-container button:hover {
+        background-color: #ff0040;
+    }
+
+    .scroll-buttons-container button:hover .fa-arrow-up,
+    .scroll-buttons-container button:hover .fa-arrow-down {
+        color: #fff;
+    }
+}
+
+.scroll-buttons-container button .fa-arrow-up,
+.scroll-buttons-container button .fa-arrow-down {
+    color: #ff0040;
+    padding: 0px;
+    transition: color 0.3s ease;
+}
+
+.scroll-buttons-container button.active {
+    background-color: #ff0040;
+}
+
+.scroll-buttons-container button.active .fa-arrow-up,
+.scroll-buttons-container button.active .fa-arrow-down {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .scroll-buttons-container {
+        bottom: 20px;
+        right: 20px;
+    }
+}
