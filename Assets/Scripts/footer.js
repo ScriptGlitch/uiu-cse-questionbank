@@ -24,8 +24,7 @@ class MyFooter extends HTMLElement {
     </div>
         </div>
         <div class="footerBottom">
-            <!-- <p>Copyright &copy; 2025 | All rights reserved <span class="designer"> Kawsar Ahmed</span></p> -->
-            <p>Copyright &copy; 2023 | All rights reserved @ <a href="https://www.github.com/scriptglitch"
+              <p>Copyright &copy; 2025 | All rights reserved @ <a href="https://www.github.com/scriptglitch"
                     class="copyright-link"> Script Glitch</a></p>
         </div>
     </footer>
