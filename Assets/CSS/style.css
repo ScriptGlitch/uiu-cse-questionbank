@@ -688,7 +688,10 @@ input:focus {
 #outputFunctionEvaluation,
 #outputMinNumberTest,
 #outputTriangleTest,
-#outputStudentIDTest
+#outputStudentIDTest,
+#outputMaxValueCheck,
+#outputMaxValueCalculation,
+#outputPrintDigits
 {
     border: 1px solid rgba(36, 241, 6, 0.46);
     background-color: rgba(7, 149, 66, 0.12156862745098039);
