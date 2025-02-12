@@ -61,25 +61,7 @@
                             <td>84.9 12.6</td>
                             <td>2.596</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
-
-int main() {
-    float E, m, c;
-
-    scanf("%f %f", &E, &m);
-
-    c = sqrt(E / m);
-
-    printf("%.3f\n", c);
-
-    return 0;
-}
-            </code></pre>
+                    </table>                   
                 </td>
             </tr>
             <tr>
@@ -178,26 +160,6 @@ int main() {
                             <td>The perimeter of a rectangle is: 10.000000</td>
                         </tr>
                     </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-
-int main() {
-    char choice;
-    float length, width;
-
-    scanf("%c %f %f", &choice, &length, &width);
-
-    if (choice == 'A') {
-        printf("The area of a rectangle is: %.6f\n", length * width);
-    } else if (choice == 'P') {
-        printf("The perimeter of a rectangle is: %.6f\n", 2 * (length + width));
-    }
-
-    return 0;
-}
-            </code></pre>
                 </td>
             </tr>
             <tr>
@@ -298,33 +260,7 @@ int main() {
                             <td>10 9 7</td>
                             <td>Red Number</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-
-int main() {
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
-
-    int maxVal = a;
-    if (b > maxVal) maxVal = b;
-    if (c > maxVal) maxVal = c;
-
-    if (maxVal % 2 == 0 && maxVal % 3 == 0) {
-        printf("Purple Number\n");
-    } else if (maxVal % 2 == 0) {
-        printf("Red Number\n");
-    } else if (maxVal % 3 == 0) {
-        printf("Blue Number\n");
-    } else {
-        printf("White Number\n");
-    }
-
-    return 0;
-}
-            </code></pre>
+                    </table>                 
                 </td>
             </tr>
             <tr>
@@ -440,29 +376,7 @@ int main() {
                             <td>-3 -2 -9</td>
                             <td>Maximum value: 25</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-
-int main() {
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
-
-    int val1 = a + b * c;
-    int val2 = b + a * c;
-    int val3 = c + a * b;
-
-    int maxVal = val1;
-    if (val2 > maxVal) maxVal = val2;
-    if (val3 > maxVal) maxVal = val3;
-
-    printf("Maximum value: %d\n", maxVal);
-
-    return 0;
-}
-            </code></pre>
+                    </table>                   
                 </td>
             </tr>
             <tr>
@@ -570,35 +484,7 @@ int main() {
                             <td>16</td>
                             <td>6789</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-
-int main() {
-    int num;
-    scanf("%d", &num);
-    
-    int lastDigit = num % 10;
-
-    switch (lastDigit) {
-        case 0: printf("0123456789\n"); break;
-        case 1: printf("123456789\n"); break;
-        case 2: printf("23456789\n"); break;
-        case 3: printf("3456789\n"); break;
-        case 4: printf("456789\n"); break;
-        case 5: printf("56789\n"); break;
-        case 6: printf("6789\n"); break;
-        case 7: printf("789\n"); break;
-        case 8: printf("89\n"); break;
-        case 9: printf("9\n"); break;
-        default: printf("Invalid input\n"); break;
-    }
-
-    return 0;
-}
-            </code></pre>
+                    </table>                  
                 </td>
             </tr>
             <tr>
@@ -717,27 +603,7 @@ int main() {
                             <td>12.9</td>
                             <td>Volume = 8992.05, Area = 2091.17</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
-
-int main() {
-    float radius, volume, area;
-    const float pi = 3.1416;
-
-    scanf("%f", &radius);
-
-    volume = (4.0/3.0) * pi * pow(radius, 3);
-    area = 4 * pi * pow(radius, 2);
-
-    printf("Volume = %.2f, Area = %.2f\n", volume, area);
-
-    return 0;
-}
-            </code></pre>
+                    </table>              
                 </td>
             </tr>
             <tr>
@@ -842,37 +708,6 @@ int main() {
                                 <td>0.143</td>
                             </tr>
                         </table>
-                        <br><br>
-                        <b>Given Code:</b>
-                        <pre><code>
-#include &lt;stdio.h&gt;
-
-float f(float x, float y) {
-    if (x < 0 && y < 0) {
-        return x * x * x + 5 * x * y;
-    } else if (x < 0 && y > 0) {
-        return 4 * y;
-    } else if (x >= 0 && y >= 0) {
-        return 1.0 / (x + y);
-    } else {
-        return -1; // Undefined for all other cases
-    }
-}
-
-int main() {
-    float x, y;
-    scanf("%f %f", &x, &y);
-
-    float result = f(x, y);
-    if (result == -1) {
-        printf("Undefined\n");
-    } else {
-        printf("%.3f\n", result);
-    }
-
-    return 0;
-}
-            </code></pre>
                 </td>
             </tr>
             <tr>
@@ -988,34 +823,7 @@ int main() {
                             <td>11 15 17</td>
                             <td>Odd, Red Number</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-
-int main() {
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
-
-    int min = a;
-
-    if (b < min) {
-        min = b;
-    }
-    if (c < min) {
-        min = c;
-    }
-
-    if (min % 2 == 0) {
-        printf("Even, Blue Number\n");
-    } else {
-        printf("Odd, Red Number\n");
-    }
-
-    return 0;
-}
-            </code></pre>
+                    </table>                 
                 </td>
             </tr>
             <tr>
@@ -1131,25 +939,7 @@ int main() {
                             <td>1 2 3</td>
                             <td>Invalid Triangle.</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-
-int main() {
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
-
-    if (a + b > c && a + c > b && b + c > a) {
-        printf("Valid Triangle.\n");
-    } else {
-        printf("Invalid Triangle.\n");
-    }
-
-    return 0;
-}
-            </code></pre>
+                    </table>               
                 </td>
             </tr>
             <tr>
@@ -1254,37 +1044,7 @@ int main() {
                             <td>1122 ?</td>
                             <td>The input is invalid</td>
                         </tr>
-                    </table>
-                    <br><br>
-                    <b>Given Code:</b>
-                    <pre><code>
-#include &lt;stdio.h&gt;
-
-int main() {
-    int studentID, lastDigit;
-    char operator;
-
-    scanf("%d %c", &studentID, &operator);
-
-    lastDigit = studentID % 10;
-
-    switch(operator) {
-        case '+':
-            printf("%d + %d + %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit + lastDigit + lastDigit);
-            break;
-        case '-':
-            printf("%d - %d - %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit - lastDigit - lastDigit);
-            break;
-        case '*':
-            printf("%d * %d * %d = %d\n", lastDigit, lastDigit, lastDigit, lastDigit * lastDigit * lastDigit);
-            break;
-        default:
-            printf("The input is invalid\n");
-    }
-
-    return 0;
-}
-            </code></pre>
+                    </table>              
                 </td>
             </tr>
             <tr>
